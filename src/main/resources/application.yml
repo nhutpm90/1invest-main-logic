@@ -1,0 +1,25 @@
+server:
+  port: 8899
+      
+---
+  
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/testjpa?autoReconnect=true&useSSL=false&useUnicode=yes&characterEncoding=UTF-8
+    username: oneinvest
+    password: oneinvest123
+  jpa:
+    show-sql: true
+    hibernate:
+       ddl-auto: update
+
+---
+  
+spring:
+  profiles: test
+
+---
+
+spring:
+  profiles: prod

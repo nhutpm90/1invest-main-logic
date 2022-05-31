@@ -1,0 +1,61 @@
+spring:
+  profiles:
+    active: dev
+
+---
+
+domain:
+  name: localhost
+  
+spring:
+  profiles: dev
+  application:
+    name: 1invest-main-logic
+  cloud: 
+    config: 
+      uri: http://${domain.name}:8888
+      
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka/}
+  instance:
+    preferIpAddress: true
+    
+---
+
+domain:
+  name: alpha.myapp.vn
+  
+spring:
+  profiles: test
+  application:
+    name: 1invest-main-logic
+  cloud: 
+    config: 
+      uri: http://localhost:8888
+#      uri: http://${domain.name}:8888
+      
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka/}
+
+---
+
+domain:
+  name: myapp.vn
+  
+spring:
+  profiles: prod
+  application:
+    name: 1invest-main-logic
+  cloud: 
+    config: 
+      uri: http://localhost:8888
+#      uri: http://${domain.name}:8888
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka/}
