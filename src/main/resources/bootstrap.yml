@@ -8,7 +8,9 @@ domain:
   name: localhost
   
 spring:
-  profiles: dev
+  config:
+    activate:
+      on-profile: dev
   application:
     name: 1invest-main-logic
   cloud: 
@@ -28,7 +30,9 @@ domain:
   name: alpha.myapp.vn
   
 spring:
-  profiles: test
+  config:
+    activate:
+      on-profile: test
   application:
     name: 1invest-main-logic
   cloud: 
@@ -47,7 +51,9 @@ domain:
   name: myapp.vn
   
 spring:
-  profiles: prod
+  config:
+    activate:
+      on-profile: prod
   application:
     name: 1invest-main-logic
   cloud: 

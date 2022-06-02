@@ -4,7 +4,9 @@ server:
 ---
   
 spring:
-  profiles: dev
+  config:
+    activate:
+      on-profile: dev
   datasource:
     url: jdbc:mysql://localhost:3306/testjpa?autoReconnect=true&useSSL=false&useUnicode=yes&characterEncoding=UTF-8
     username: oneinvest
@@ -17,9 +19,13 @@ spring:
 ---
   
 spring:
-  profiles: test
+  config:
+    activate:
+      on-profile: test
 
 ---
 
 spring:
-  profiles: prod
+  config:
+    activate:
+      on-profile: prod
